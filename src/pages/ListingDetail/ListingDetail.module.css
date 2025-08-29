@@ -1,0 +1,17 @@
+.listingSection {
+    padding: 1em 2em;
+}
+
+.listingSection p {
+    font-size: 1.5rem;
+}
+
+.listingSection .listingCards {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}

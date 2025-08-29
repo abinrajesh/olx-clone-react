@@ -1,0 +1,21 @@
+.loadMoreBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.loadMoreBtn {
+    background-color: transparent;
+    color: #004896;
+    border-radius: 5px;
+    border: 2px solid #004896;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.loadMoreBtn span {
+    font-size: 1rem;
+    font-weight: 600;
+}
