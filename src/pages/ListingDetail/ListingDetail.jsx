@@ -12,6 +12,22 @@ const ListingDetail = () => {
                 <ListingCard />
                 <ListingCard />
                 <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
+                <ListingCard />
             </div>
             <LoadMoreAd />
         </div>
