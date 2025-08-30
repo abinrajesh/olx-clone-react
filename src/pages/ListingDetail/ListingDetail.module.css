@@ -1,7 +1,15 @@
 .listingSection {
     padding: 1em 2em;
+    max-width: 100vw;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-
+.header {
+    display: flex;
+    width: 85%;
+}
 .listingSection p {
     font-size: 1.5rem;
 }

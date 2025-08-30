@@ -6,7 +6,9 @@ import LoadMoreAd from '../../components/Button/LoadMore/LoadMoreAd'
 const ListingDetail = () => {
     return (
         <div className={styles.listingSection}>
-            <p>Fresh recommendations</p>
+            <div className={styles.header}>
+                <p>Fresh recommendations</p>
+            </div>
             <div className={styles.listingCards}>
                 <ListingCard />
                 <ListingCard />

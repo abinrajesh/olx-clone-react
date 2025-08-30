@@ -12,6 +12,7 @@ import carWaleLogo from '../../assets/PartnerLogos/carwale.svg'
 import bikeWaleLogo from '../../assets/PartnerLogos/bikewale.svg'
 import carTradeLogo from '../../assets/PartnerLogos/cartrade.svg'
 import mobilityLogo from '../../assets/PartnerLogos/mobility.svg'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -92,14 +93,19 @@ const Footer = () => {
 
           </div>
           <div className={styles.downloadOptions}>
-            <picture>
-              <source type='image/svg+xml' srcSet={playStoreBanner} />
-              <img src={playStoreBanner} alt="" />
-            </picture>
-            <picture>
-              <source type='image/svg+xml' srcSet={appStoreBanner} />
-              <img src={appStoreBanner} alt="" />
-            </picture>
+            <Link to='work-in-progress'>
+              <picture>
+                <source type='image/svg+xml' srcSet={playStoreBanner} />
+                <img src={playStoreBanner} alt="" />
+              </picture>
+            </Link>
+            
+            <Link to='work-in-progress'>
+              <picture>
+                <source type='image/svg+xml' srcSet={appStoreBanner} />
+                <img src={appStoreBanner} alt="" />
+              </picture>
+            </Link>
           </div>
         </div>
       </div>

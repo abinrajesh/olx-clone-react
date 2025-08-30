@@ -3,6 +3,7 @@ import styles from './MobileAppBanner.module.css'
 import MobileAppBannerImg from '../../assets/BannerPosters/phone-app.png'
 import playStorePoster from '../../assets/BannerPosters/playstore_2x.webp'
 import appStorePoster from '../../assets/BannerPosters/appstore_2x.webp'
+import { Link } from 'react-router-dom'
 
 const MobileAppBanner = () => {
   return (
@@ -27,23 +28,27 @@ const MobileAppBanner = () => {
           <span>GET YOUR APP TODAY</span>
         </div>
         <div className={styles.downloadOptionsPosters}>
-          <div className={styles.appStorePoster}>
-            <a href="">
-              <picture>
-                <source type='image/svg+xml' srcSet={appStorePoster}/>
-                <img src={appStorePoster} alt="App Store" />
-              </picture>
-            </a>
-          </div>
+          <Link to='work-in-progress'>
+            <div className={styles.appStorePoster}>
+              <a href="">
+                <picture>
+                  <source type='image/svg+xml' srcSet={appStorePoster} />
+                  <img src={appStorePoster} alt="App Store" />
+                </picture>
+              </a>
+            </div>
+          </Link>
 
-          <div className={styles.playStorePoster}>
-            <a href="">
-              <picture>
-                <source type='image/svg+xml' srcSet={playStorePoster}/>
-                <img src={playStorePoster} alt="App Store" />
-              </picture>
-            </a>
-          </div>
+          <Link to='work-in-progress'>
+            <div className={styles.playStorePoster}>
+              <a href="">
+                <picture>
+                  <source type='image/svg+xml' srcSet={playStorePoster} />
+                  <img src={playStorePoster} alt="App Store" />
+                </picture>
+              </a>
+            </div>
+          </Link>
         </div>
 
       </div>
