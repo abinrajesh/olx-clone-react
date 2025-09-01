@@ -29,7 +29,7 @@ const OnBoardingCarousels = () => {
                     </picture>
                 </div>
                 <div className={styles.description}>
-                    <span>Help us become one of the safest places to buy and sell</span>
+                    <span>Close deals from the comfort of your home.</span>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@ const OnBoardingCarousels = () => {
                     </picture>
                 </div>
                 <div className={styles.description}>
-                    <span>Help us become one of the safest places to buy and sell</span>
+                    <span>Keep all your favourites in one place.</span>
                 </div>
             </div>
 
