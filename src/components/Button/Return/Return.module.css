@@ -1,0 +1,13 @@
+.returnBtn {
+    position: absolute;
+    top: 1.5em;
+    left: 1em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.returnBtn span svg {
+    fill: #8d9094;
+}

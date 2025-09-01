@@ -16,111 +16,11 @@
     position: relative;
 }
 
-.closeBtn {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-}
-
-.closeBtn button {
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-
-.loginOptions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
-}
-
-.loginOptions button {
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.5em;
-    background-color: transparent;
-    border-radius: 5px;
-    min-width: 20rem;
-    transition: background-color 0.218s, border-color 0.218s;
-}
-
-.loginOptions a {
-    text-decoration: none;
-}
-
-.phoneLoginBtn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 2px solid #004896;
-    color: #004896;
-    box-sizing: border-box;
-}
-
-.phoneLoginBtn svg {
-    color: inherit;
-    fill: currentColor;
-}
-
-.phoneLoginBtn:hover {
-    background-color: #f1f1f1;
-}
-
-.googleLogInBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    gap: 0.5rem;
-    outline: none;
-    border: 0.2px solid #cccccc;
-    color: #3c4043;
-    text-align: center;
-}
-
-.googleLogInBtn span svg {
-    position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
-    width: 20px;
-}
-
-.googleLogInBtn:hover {
-    background-color: #f1f1f1;
-}
-
-.loginEmailLink span {
-    color: #000;
-    text-decoration: underline;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.userAgreement {
-    padding-top: 5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-    font-size: 0.8rem;
-    max-width: 80%;
-    text-align: center;
-    color: #8d9094;
-}
-
-.userAgreement a {
-    color: #3a77ff;
-    text-decoration: none;
-}
-
-
 
 @media (min-width: 540px) and (max-width: 1023px) {
     .content {
         border-radius: 5px;
-        height: 70%;
+        height: 60%;
         width: 50%;
     }
 }
@@ -128,7 +28,7 @@
 @media (min-width: 1024px) {
     .content {
         border-radius: 5px;
-        height: 70%;
+        height: 60%;
         width: 20%;
     }
 }

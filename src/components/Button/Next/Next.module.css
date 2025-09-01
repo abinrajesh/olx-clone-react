@@ -1,0 +1,16 @@
+.nextBtn {
+    margin-top: 4em;
+    width: 20rem;
+    padding: 1em 2.5em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #d9dadb;
+    cursor: not-allowed;
+}
+
+.nextBtn span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f0f1;
+}
