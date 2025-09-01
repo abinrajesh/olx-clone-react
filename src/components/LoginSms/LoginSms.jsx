@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../../pages/Login/Login'
 import Return from '../Button/Return/Return'
@@ -7,6 +7,21 @@ import olxLogo from '../../assets/olx_logo_2025.svg'
 import Next from '../Button/Next/Next'
 
 const LoginSms = () => {
+  const [input, setInput] = useState('');
+  const [count, setCount] = useState(0);
+
+  const handleInput = (e) => {
+
+    const value = e.target.value;
+
+    if (!isNaN(+value) && value.trim() !== "") {
+      setInput(value);
+      setCount(value.length);
+    }
+  }
+
+
+
   return (
     <div className={styles.loginSmsSection}>
       <Link to='/login' element={<Login />}>
@@ -30,10 +45,10 @@ const LoginSms = () => {
             <span>+91</span>
             <div className={styles.countryCodeDivider}></div>
           </div>
-          <input type="text" placeholder='Phone Number' />
+          <input type="text" placeholder='Phone Number' onChange={handleInput} />
         </div>
 
-        <Next />
+        <Next isActive={count === 10} />
 
         <div className={styles.acknowledgement}>
           <span>
