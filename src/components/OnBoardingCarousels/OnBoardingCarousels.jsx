@@ -10,6 +10,7 @@ const OnBoardingCarousels = () => {
         <div className={styles.onboardingCarousel}>
 
             <div className={classNames(styles.carousel)}>
+
                 <div className={styles.carouselImg}>
                     <picture>
                         <source type='image/svg+xml' srcSet={postImg} />
