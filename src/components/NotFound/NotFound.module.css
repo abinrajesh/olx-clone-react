@@ -8,11 +8,13 @@
 
 .notFoundContent {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
 }
 
 .notFoundDescriptionSection {
-    width: 45%;
+    width: 70%;
 }
 
 .header h1 {
@@ -50,4 +52,25 @@
 
 .returnHome button:hover {
     transform: scale(1.1);
+}
+
+
+@media (min-width: 540px) and (max-width: 1023px) {
+
+    .notFoundContent {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+
+    .notFoundContent {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
 }
