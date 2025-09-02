@@ -28,25 +28,21 @@ const MobileAppBanner = () => {
           <span>GET YOUR APP TODAY</span>
         </div>
         <div className={styles.downloadOptionsPosters}>
-          <Link to='work-in-progress'>
+          <Link to='workinprogress'>
             <div className={styles.appStorePoster}>
-              <a href="">
                 <picture>
                   <source type='image/svg+xml' srcSet={appStorePoster} />
                   <img src={appStorePoster} alt="App Store" />
                 </picture>
-              </a>
             </div>
           </Link>
 
-          <Link to='work-in-progress'>
+          <Link to='workinprogress'>
             <div className={styles.playStorePoster}>
-              <a href="">
                 <picture>
                   <source type='image/svg+xml' srcSet={playStorePoster} />
                   <img src={playStorePoster} alt="App Store" />
                 </picture>
-              </a>
             </div>
           </Link>
         </div>

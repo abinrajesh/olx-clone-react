@@ -4,14 +4,14 @@ import logo from '../../assets/olx_logo_2025.svg';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import Login from '../../pages/Login/Login';
+import Home from '../../pages/Home/Home'
 
 const Header = () => {
     return (
         <header className={styles.header}>
 
             <div className={styles.leftSide}>
-
-                <img src={logo} alt="Olx Logo" />
+                    <img src={logo} alt="Olx Logo" />
 
                 <SearchBar />
 

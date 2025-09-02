@@ -1,0 +1,65 @@
+.loginSmsCodeSection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.olxLogo picture img,
+source {
+    width: 7.5em;
+}
+
+.authInputForm {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.header span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.confirmationMessage {
+    margin-top: 0.5em;
+    width: 20rem;
+}
+
+.confirmationMessage :first-child {
+    display: flex;
+    align-items: center;
+    font-size: 0.89rem;
+}
+
+.editNum {
+    border: none;
+    outline:none;
+    background-color: transparent;
+}
+
+.editNum svg {
+    margin-left: 1.5rem;
+}
+
+
+.numberInput {
+    position: relative;
+    margin-top: 2em;
+    border: 0.5px solid rgb(167, 166, 166);
+    border-radius: 5px;
+    padding: 1em 2.5em;
+    box-sizing: border-box;
+    width: 20rem;
+}
+
+.numberInput input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.numberInput:focus-within {
+    border: 3px solid #004896;
+}
