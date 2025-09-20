@@ -1,0 +1,38 @@
+.userMenuContainer {
+    display: flex;
+    margin-right: 20px;
+    position: relative;
+}
+
+.iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 10px;
+    outline: none;
+    background-color: transparent;
+    margin-left: 10px;
+}
+
+.iconBtn:hover {
+    background-color: hsla(211, 95%, 84%, 0.3);
+}
+
+.profileContainer {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+figure {
+    height: 33px;
+    width: 33px;
+}
+
+figure img {
+    border-radius: 30px;
+}

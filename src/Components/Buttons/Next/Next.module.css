@@ -1,0 +1,35 @@
+.nextBtn {
+    margin-top: 4em;
+    width: 20rem;
+    padding: 1em 2.5em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #004896;
+    cursor: pointer;
+}
+
+.active:hover {
+    background-color: hsl(211, 100%, 34%);
+}
+
+.active span {
+    color: white;
+}
+
+.notActive {
+    background-color: #d9dadb;
+    cursor: not-allowed;
+}
+
+.notActive span {
+    color: #f0f0f1;
+}
+
+.nextBtn span {
+    font-size: 1rem;
+    font-weight: 600;
+}

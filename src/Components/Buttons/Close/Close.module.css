@@ -1,0 +1,12 @@
+.closeBtn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.closeBtn button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}

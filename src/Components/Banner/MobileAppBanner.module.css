@@ -1,0 +1,103 @@
+.bannerContainer {
+    margin-top: 3px;
+    background-color: rgba(248, 249, 250, 1);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: 0 1em;
+}
+
+.bannerDescription {
+    max-width: 23rem;
+}
+
+.bannerDescriptionHeader {
+    padding-top: 3rem;
+}
+
+.bannerDescriptionHeader span {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.bannerDescriptionContent {
+    padding-top: 1rem;
+}
+
+.bannerDescriptionContent span {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.downloadOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.downloadHeader span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.downloadOptionsPosters {
+    margin-top: 1em;
+}
+
+.downloadOptionsPosters picture img,
+source {
+    width: 100%;
+}
+
+
+@media (min-width: 540px) and (max-width: 1023px) {
+
+    .downloadOptions {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        align-items: flex-start;
+    }
+
+    .downloadHeader span {
+        font-weight: 700;
+    }
+
+    .downloadOptionsPosters {
+        margin-top: 1em;
+    }
+
+    .downloadOptionsPosters picture img,
+    source {
+        width: 80%;
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    
+    .downloadOptions {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        align-items: flex-start;
+    }
+
+    .downloadHeader span {
+        font-weight: 700;
+    }
+
+    .downloadOptionsPosters {
+        margin-top: 1em;
+    }
+
+    .downloadOptionsPosters picture img,
+    source {
+        width: 80%;
+    }
+
+}

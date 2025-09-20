@@ -1,0 +1,93 @@
+.AuthOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.AuthOptions button {
+    font-size: 1rem;
+    padding: 0.5em;
+    background-color: transparent;
+    border-radius: 5px;
+    min-width: 20rem;
+    transition: background-color 0.218s, border-color 0.218s;
+}
+
+.authOptions a {
+    text-decoration: none;
+}
+
+.createAccBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 0.5rem;
+    border: 2px solid #004896;
+    color: #004896;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.createAccBtn svg {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 20px;
+    color: inherit;
+    fill: currentColor;
+}
+
+.createAccBtn:hover {
+    background-color: #f1f1f1;
+}
+
+.googleLogInBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 0.5rem;
+    outline: none;
+    border: 0.2px solid #cccccc;
+    color: #3c4043;
+    text-align: center;
+    font-weight: 500;
+}
+
+.googleLogInBtn span svg {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 20px;
+}
+
+.googleLogInBtn:hover {
+    background-color: #f1f1f1;
+}
+
+.loginEmailLink span {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.userAgreement {
+    padding: 0 2em;
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #8d9094;
+}
+
+.userAgreement a {
+    color: #3a77ff;
+    text-decoration: none;
+}

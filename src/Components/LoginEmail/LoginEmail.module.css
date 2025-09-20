@@ -1,0 +1,127 @@
+.loginEmailSection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.olxLogo picture img,
+source {
+    width: 7.5em;
+}
+
+.authInputForm {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.header span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.emailInput {
+    margin-top: 2em;
+    text-align: start;
+    border: 0.5px solid rgb(167, 166, 166);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 1em;
+    width: 20rem;
+}
+
+
+
+.emailInput input {
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.emailInput:focus-within {
+    border: 3px solid #004896;
+}
+
+.input {
+    margin-top: 1em;
+    border: 0.5px solid rgb(167, 166, 166);
+    border-radius: 5px;
+    padding-block: 1rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+    width: 20rem;
+    display: flex;
+}
+
+.input input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input:focus-within {
+    border: 3px solid #004896;
+}
+
+.infoText {
+    background-color: #fefbf0;
+    max-width: 20rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 1em;
+    text-align: start;
+}
+
+.infoText span {
+    font-size: 0.9rem;
+}
+
+.acknowledgement {
+    margin-top: 0.5em;
+    text-align: center;
+    max-width: 20rem;
+}
+
+.acknowledgement span {
+    font-size: 0.75rem;
+    color: #8d9094;
+}
+
+
+.loginBtn {
+    width: 20rem;
+    margin-top: 3em;
+    padding: 1em 2.5em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.loginBtn span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.active {
+    background-color: #004896;
+    cursor: pointer;
+}
+
+.active:hover {
+    background-color: hsl(211, 100%, 34%);
+}
+
+.active span {
+    color: white;
+}
+
+.notActive {
+    background-color: #d9dadb;
+    cursor: not-allowed;
+}
+
+.notActive span {
+    color: #f0f0f1;
+}
