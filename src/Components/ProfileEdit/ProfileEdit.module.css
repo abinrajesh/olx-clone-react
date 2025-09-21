@@ -1,0 +1,260 @@
+.profileEditSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.leftSection {
+    padding: 1rem;
+
+}
+
+.leftBtns {
+    margin-top: 1em;
+}
+
+
+.active {
+    color: #000;
+    font-weight: 700;
+}
+
+.notActive {
+    color: #8d9094;
+}
+
+.viewProfileBtn button {
+    margin-top: 2rem;
+    width: 20rem;
+    color: #004896;
+    border: 2px solid #004896;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.viewProfileBtn button span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.viewProfileBtn button:hover {
+    background-color: #ebebeb;
+}
+
+.rightSection {
+    width: 50%;
+}
+
+.editProfileForm {
+    margin-top: 2em;
+    border: 0.001px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.editProfileHeader {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.editProfileHeader span {
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.mainSeparation {
+    width: 100%;
+    border: 0.001px solid rgba(0, 0, 0, 0.1);
+}
+
+.subSeparation {
+    margin-top: 2rem;
+    width: 100%;
+    border: 0.001px solid rgba(0, 0, 0, 0.1);
+}
+
+.formHeaders {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.formHeaders span {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.infoSection {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.inputs {
+    border-radius: 4px;
+    border: 0.001px solid rgba(0, 0, 0, 0.5);
+    padding: 1rem 1rem;
+    width: 30rem;
+    font-size: 1rem;
+}
+
+.locationInp {
+    padding-bottom: 3rem;
+}
+
+.mobileNumberInput,
+.emailInput {
+    position: relative;
+
+}
+
+.mobileNumberInput input {
+    padding-left: 65px;
+}
+
+.countryCode {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+}
+
+.countryCode span {
+    color: #8d9094;
+}
+
+.countryCodeSeparator {
+    position: absolute;
+    top: 10px;
+    left: 55px;
+    background-color: #8d909470;
+    width: 1px;
+    height: 70%;
+
+}
+
+.inputSubmitBtn {
+    cursor: pointer;
+    position: absolute;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    top: 20px;
+    right: 40px;
+}
+
+.formSections {
+    display: flex;
+}
+
+.formLeftSide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 55%;
+}
+
+.formRightSide {
+    width: 40%;
+}
+
+.acknowledgement {
+    border: 1px solid hsla(220, 1%, 49%, 0.3);
+    width: 16rem;
+    padding: 1rem;
+}
+
+.acknowledgementHeader {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.acknowledgementDescription {
+    max-width: 15rem;
+    font-size: 0.8rem;
+    color: #8d9094;
+}
+
+.additionalInfoHeader {
+    margin-bottom: 0;
+}
+
+.additionalInfoSection {
+    width: 55%;
+    margin-block: auto;
+}
+
+
+.additionalInfoDescription {
+    margin-top: 0.5rem;
+}
+
+.additionalInfoDescription span {
+    color: #8d9094;
+    font-size: 0.8rem;
+}
+
+.addintionalInfoBtn {
+    margin-bottom: 2rem;
+}
+
+.linkBtn,
+.unLinkBtn {
+    margin-top: 2rem;
+    width: 15rem;
+    color: #004896;
+    border: 2px solid #004896;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.linkBtn,
+.unLinkBtn span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.linkBtn:hover,
+.unLinkBtn:hover {
+    background-color: #ebebeb;
+}
+
+.additionalInfoSubmitSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.discardBtn {
+    border: none;
+    background-color: transparent;
+    color: #004896;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+}
+
+.discardBtn:hover {
+    text-decoration: none;
+}
+
+.saveChangesBtn {
+    background-color: #004896;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.9rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.saveChangesBtn:hover {
+    background-color: hsl(211, 100%, 34%);
+}
