@@ -45,3 +45,12 @@ figure img {
     background: transparent;
     z-index: 5;
 }
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

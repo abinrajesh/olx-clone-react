@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/olx_logo_2025.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import UserMenu from '../UserMenu/UserMenu';
-// import LanguageModal from '../LanguageModal/LanguageModal';
+import LanguageModal from '../Modals/LanguageModal/LanguageModal';
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const [touched, setTouched] = useState(false);
 
     const handleLogoClick = () => {
         navigate('/');
@@ -23,16 +24,23 @@ const Header = () => {
 
                 <SearchBar />
 
-                <div className={styles.languageSelector}>
+                <div className={styles.languageSelector} onClick={() => setTouched(prev => !prev)}>
                     <span className={styles.languageOption}>English</span>
                     <span className={styles.languageSelectorBtn}>
                         <button type='button'>
-                            <svg width="24px" height="24px" viewBox="0 0 1024 1024" data-aut-id="icon" className="" fillRule="evenodd"><path className="rui-w4DG7" d="M85.392 277.333h60.331l366.336 366.336 366.336-366.336h60.331v60.331l-408.981 409.003h-35.307l-409.045-409.003z"></path></svg>
+                            <span className={`${styles.arrow} ${touched ? styles.rotate : ''}`}>
+                                <svg width="24px" height="24px" viewBox="0 0 1024 1024" data-aut-id="icon" className="" fillRule="evenodd"><path className="rui-w4DG7" d="M85.392 277.333h60.331l366.336 366.336 366.336-366.336h60.331v60.331l-408.981 409.003h-35.307l-409.045-409.003z"></path></svg>
+                            </span>
                         </button>
                     </span>
                 </div>
 
-                {/* <LanguageModal /> */}
+                {touched && (
+                    <>
+                        <div className={styles.overlay} onClick={() => setTouched(false)} />
+                        <LanguageModal />
+                    </>
+                )}
 
             </div>
 

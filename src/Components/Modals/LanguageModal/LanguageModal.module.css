@@ -1,4 +1,5 @@
 .languageModalContainer {
+    z-index: 999;
     position: absolute;
     top: 8%;
     right: 15%;

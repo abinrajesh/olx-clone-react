@@ -9,25 +9,33 @@ import LoginEmail from './Components/LoginEmail/LoginEmail'
 import Ads from './Components/Ads/Ads';
 import Profile from './Components/Profile/Profile'
 import ProfileEdit from './Components/ProfileEdit/ProfileEdit'
+import Post from './Pages/Post/Post'
 
 const App = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
 
-      <Route path='/' element={<Home />}>
+      <>
+        <Route path='/' element={<Home />}>
 
-        <Route index element={<Ads />} />
-        <Route path='profile' element={<Profile />} />
-        <Route path='profile/editprofile' element={<ProfileEdit />} />
+          <Route index element={<Ads />} />
+          <Route path='profile' element={<Profile />} />
+          <Route path='profile/editprofile' element={<ProfileEdit />} />
 
-        <Route path='login' element={<Auth />}>
-          <Route index element={<AuthMain />} />
-          <Route path='emailsignup' element={<EmailSignup />} />
-          <Route path='loginemail' element={<LoginEmail />} />
-        </Route>
+          <Route path='login' element={<Auth />}>
+            <Route index element={<AuthMain />} />
+            <Route path='emailsignup' element={<EmailSignup />} />
+            <Route path='loginemail' element={<LoginEmail />} />
+          </Route>
+
+
+        </Route >
+
         <Route path='*' element={<NotFound />} />
-      </Route >
+
+        <Route path='post' element={<Post />} />
+      </>
 
     )
   )
