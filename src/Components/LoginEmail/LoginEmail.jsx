@@ -70,7 +70,7 @@ const LoginEmail = () => {
 
   return (
     <div className={styles.loginEmailSection}>
-      <Link to='/signupOrLogin'>
+      <Link to='/login'>
         <Return />
       </Link>
 

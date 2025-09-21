@@ -13,6 +13,13 @@
     align-items: center;
 }
 
+.notFoundImage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 100%;
+}
+
 .notFoundDescriptionSection {
     width: 70%;
 }
@@ -62,7 +69,12 @@
         flex-direction: row;
         justify-content: center;
     }
-    
+
+    .notFoundImage {
+        margin-left: 50%;
+    }
+
+
 }
 
 @media (min-width: 1024px) {
@@ -71,6 +83,10 @@
         display: flex;
         justify-content: center;
         flex-direction: row;
+    }
+
+    .notFoundImage {
+        margin-left: 50%;
     }
 
 }

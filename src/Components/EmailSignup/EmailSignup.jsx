@@ -95,7 +95,7 @@ const EmailSignup = () => {
 
   return (
     <div className={styles.emailSignupSection}>
-      <Link to='/signupOrLogin'>
+      <Link to='/login'>
         <Return />
       </Link>
 

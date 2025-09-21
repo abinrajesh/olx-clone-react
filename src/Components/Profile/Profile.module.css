@@ -6,7 +6,6 @@
     align-items: center;
 }
 
-.leftSection {}
 
 .userProfilePic {
     display: flex;
@@ -114,12 +113,13 @@ source {
 
 .noPublicationsPoster figure img,
 source {
-    margin-left: 5%;
-    width: 70%;
+    margin-left: -100%;
+    width: 200px;
 }
 
 .noPublicationsDescription {
     margin-block: 1em;
+    margin-top: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;

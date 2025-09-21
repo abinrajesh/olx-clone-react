@@ -1,8 +1,20 @@
 import React from 'react'
 import styles from './Profile.module.css'
 import noPublicationsPoster from '../../assets/no-publications.png';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+
+    const navigate = useNavigate();
+
+    const handleEditProfile = () => {
+        navigate('editprofile')
+    }
+
+    const handleSellClick = () => {
+        navigate('post');
+    }
+
     return (
         <div className={styles.profileSection}>
 
@@ -46,7 +58,7 @@ const Profile = () => {
                     </div>
 
                     <div className={styles.editProfileBtnContainer}>
-                        <button>
+                        <button onClick={handleEditProfile}>
                             <span><svg width="22px" height="22px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-7jwXk rui-B79vz" d="M822.312 85.333L745.474 162.667L861.792 279.743L938.667 202.409V168.573L855.913 85.333H822.312ZM193.912 178.053L85.334 287.327V829.393L193.912 938.666H732.562L841.14 829.393V554.805L794.107 518.636L747.111 554.805V790.124L693.529 844.05H232.908L179.326 790.124V326.595L232.908 272.67H463.2L493.786 230.083L463.2 178.053H193.912ZM309.3 601.657V718.697H425.618L826.554 315.183L710.199 198.143L309.3 601.657Z"></path></svg></span>
                             <span>Edit Profile</span>
                         </button>
@@ -77,7 +89,7 @@ const Profile = () => {
                     </div>
 
                     <div className={styles.sellBtn}>
-                        <button>
+                        <button onClick={handleSellClick}>
                             <span>Start selling</span>
                         </button>
                     </div>

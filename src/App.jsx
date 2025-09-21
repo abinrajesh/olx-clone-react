@@ -6,21 +6,28 @@ import Auth from './Pages/Auth/Auth'
 import AuthMain from './Components/AuthMain/AuthMain'
 import EmailSignup from './Components/EmailSignup/EmailSignup'
 import LoginEmail from './Components/LoginEmail/LoginEmail'
+import Ads from './Components/Ads/Ads';
+import Profile from './Components/Profile/Profile'
+import ProfileEdit from './Components/ProfileEdit/ProfileEdit'
 
 const App = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
 
-      <Route path='/'>
-        <Route index element={<Home />} />
-        <Route path='signupOrLogin' element={<Auth />}>
+      <Route path='/' element={<Home />}>
+
+        <Route index element={<Ads />} />
+        <Route path='profile' element={<Profile />} />
+        <Route path='profile/editprofile' element={<ProfileEdit />} />
+
+        <Route path='login' element={<Auth />}>
           <Route index element={<AuthMain />} />
           <Route path='emailsignup' element={<EmailSignup />} />
           <Route path='loginemail' element={<LoginEmail />} />
         </Route>
         <Route path='*' element={<NotFound />} />
-      </Route>
+      </Route >
 
     )
   )

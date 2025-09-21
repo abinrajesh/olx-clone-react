@@ -13,7 +13,6 @@
     padding: 10px 10px;
     outline: none;
     background-color: transparent;
-    margin-left: 10px;
 }
 
 .iconBtn:hover {
@@ -35,4 +34,14 @@ figure {
 
 figure img {
     border-radius: 30px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 5;
 }

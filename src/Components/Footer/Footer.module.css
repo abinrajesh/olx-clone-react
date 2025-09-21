@@ -61,6 +61,7 @@
     align-items: center;
     margin-top: 1.5em;
     gap: 1em;
+    margin-left: 100%;
 }
 
 .bottomSection {
@@ -132,6 +133,7 @@ source {
 
     .downloadOptions {
         flex-direction: row;
+        margin-left: 25%;
     }
 
     .partnerLogo {

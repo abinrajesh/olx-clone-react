@@ -8,7 +8,16 @@ const ProfileEdit = () => {
     const navigate = useNavigate();
 
     const handleViewProfile = () => {
-        navigate('profile');
+        navigate('/profile');
+    }
+
+    const handleDiscard = () => {
+        navigate('/profile');
+    }
+
+    const handleSave = (e) => {
+        e.preventDefault();
+        alert("Saved!");
     }
 
     return (
@@ -123,10 +132,10 @@ const ProfileEdit = () => {
                     <div className={styles.mainSeparation}></div>
 
                     <div className={styles.additionalInfoSubmitSection}>
-                        <button className={styles.discardBtn}>
+                        <button className={styles.discardBtn} onClick={handleDiscard}>
                             <span>Discard</span>
                         </button>
-                        <button className={styles.saveChangesBtn}>
+                        <button className={styles.saveChangesBtn} onClick={handleSave}>
                             <span>Save Changes</span>
                         </button>
                     </div>
