@@ -1,4 +1,4 @@
-OLX Clone
+##OLX Clone
 
 A fully functional OLX-like marketplace web application built with React and CSS, featuring a responsive design and interactive user interface. This project helped me enhance my front-end development skills and learn real-world application building.
 
