@@ -28,7 +28,7 @@ Getting Started
 
 Clone the repository
 
-git clone https://github.com/abinrajesh/olx-clone.git
+git clone https://github.com/abinrajesh/olx-clone-react.git
 
 
 Install dependencies
