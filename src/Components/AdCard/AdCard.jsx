@@ -1,15 +1,19 @@
 import React from 'react'
 import styles from './AdCard.module.css';
 
-const AdCard = () => {
+const AdCard = ({ title, description, price, date, images }) => {
     return (
         <div className={styles.adCard}>
-            <div className={styles.adImage}></div>
+            {images?.length > 0 ? (
+                <div className={styles.adImage} style={{ backgroundImage: `url(${images[0]})` }}></div>
+            ) : (
+                <div className={styles.noImage}></div>
+            )}
             <div className={styles.adDescription}>
-                <span className={styles.adPrice}>₹ 55972</span>
-                <span className={styles.adProductYear}>2020</span>
-                <span className={styles.adTitle}>KTM RC 390 BS6</span>
-                <span className={styles.adLocation}>Kerala, India</span>
+                <span className={styles.adPrice}>₹ {price}</span>
+                <span className={styles.adTitle}>{title}</span>
+                <span className={styles.adSmDescription}>{description}</span>
+                <span className={styles.adProductYear}>{date}</span>
             </div>
         </div>
     )

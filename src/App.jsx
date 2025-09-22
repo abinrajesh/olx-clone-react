@@ -61,6 +61,7 @@ const App = () => {
             <Post />
           </PrivateRoute>
         } />
+        
       </>
 
     )
