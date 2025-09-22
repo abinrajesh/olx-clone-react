@@ -12,6 +12,7 @@ import ProfileEdit from './Components/ProfileEdit/ProfileEdit'
 import Post from './Pages/Post/Post'
 import Wishlist from './Components/Wishlist/Wishlist'
 import Chat from './Components/Chat/Chat'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 
 const App = () => {
 
@@ -24,7 +25,11 @@ const App = () => {
           <Route index element={<Ads />} />
           <Route path='profile' element={<Profile />} />
           <Route path='profile/editprofile' element={<ProfileEdit />} />
-          <Route path='wishlist' element={<Wishlist />} />
+          <Route path='wishlist' element={
+            <PrivateRoute>
+              <Wishlist />
+            </PrivateRoute>
+          } />
           <Route path='chat' element={<Chat />} />
 
 
@@ -39,7 +44,11 @@ const App = () => {
 
         <Route path='*' element={<NotFound />} />
 
-        <Route path='post' element={<Post />} />
+        <Route path='post' element={
+          <PrivateRoute>
+            <Post />
+          </PrivateRoute>
+        } />
       </>
 
     )

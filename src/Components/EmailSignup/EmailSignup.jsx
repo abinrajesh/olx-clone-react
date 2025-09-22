@@ -72,7 +72,7 @@ const EmailSignup = () => {
       });
 
       alert(`Account Created! Welcome ${userName}`);
-      setTimeout(() => navigate('/'), 1500);
+      navigate('/');
     } catch (error) {
       console.error(error.code, error.message);
     }

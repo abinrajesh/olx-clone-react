@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './AccountDashboardModal.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import myAds from '../../../assets/myAds.svg'
+import { signOut } from 'firebase/auth';
+import { auth } from '../../../Firebase/Config';
 
 const AccountDashboardModal = () => {
 
@@ -9,6 +11,18 @@ const AccountDashboardModal = () => {
 
     const handleProfileClick = () => {
         navigate('profile');
+    }
+
+    const handleLogout = async () => {
+        const isConfirmed = window.confirm("Do you want to Logout?");
+        if (!isConfirmed) return;
+        
+        try {
+            await signOut(auth);
+            alert("Signed Out!");
+        } catch (error) {
+            console.error("Logout error: ", error.message);
+        }
     }
 
     return (
@@ -101,12 +115,12 @@ const AccountDashboardModal = () => {
                     <span>Install OLX Lite app</span>
                 </Link>
 
-                <Link to='logout'>
+                <button className={styles.logoutBtn} onClick={handleLogout}>
                     <div>
                         <svg width="23px" height="23px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-w4DG7" d="M128 85.333l-42.667 42.667v768l42.667 42.667h768l42.667-42.667v-213.333l-42.667-42.667-42.667 42.667v170.667h-682.667v-682.667h682.667v170.667l42.667 42.667 42.667-42.667v-213.333l-42.667-42.667h-768zM494.336 298.667l-183.168 183.168v60.331l183.168 183.168h60.331v-60.331l-110.336-110.336h323.669l42.667-42.667-42.667-42.667h-323.669l110.336-110.336v-60.331h-60.331z"></path></svg>
                     </div>
                     <span>Logout</span>
-                </Link>
+                </button>
             </div>
 
         </div>

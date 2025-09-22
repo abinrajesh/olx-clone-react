@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import OnBoardingCarousels from '../../Components/OnBoardingCarousels/OnBoardingCarousels'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './AuthMain.module.css'
@@ -7,6 +7,7 @@ import { auth, provider } from "../../Firebase/Config";
 
 const AuthMain = () => {
     const navigate = useNavigate();
+
 
     const handleGoogleLogin = async () => {
         try {

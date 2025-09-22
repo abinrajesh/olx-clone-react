@@ -96,3 +96,25 @@
     font-weight: 600;
     font-size: 0.8rem;
 }
+
+.logoutBtn {
+    width: 100%;
+    display: flex;
+    color: black;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.logoutBtn:hover {
+    background-color: #d9ebfe;
+}
+
+.logoutBtn span {
+    font-size: 1rem;
+}
