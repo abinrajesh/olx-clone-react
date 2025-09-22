@@ -1,0 +1,42 @@
+.chatContainer {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    padding-top: 2rem;
+}
+
+.noChatContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emptyChatImg img {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.noChatDescription {
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.homeBtn button {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 3px solid #004896;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.homeBtn button span {
+    color: #004896;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.homeBtn button:hover {
+    background-color: #f3f3f3be;
+}

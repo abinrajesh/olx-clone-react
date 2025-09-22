@@ -10,6 +10,8 @@ import Ads from './Components/Ads/Ads';
 import Profile from './Components/Profile/Profile'
 import ProfileEdit from './Components/ProfileEdit/ProfileEdit'
 import Post from './Pages/Post/Post'
+import Wishlist from './Components/Wishlist/Wishlist'
+import Chat from './Components/Chat/Chat'
 
 const App = () => {
 
@@ -22,6 +24,9 @@ const App = () => {
           <Route index element={<Ads />} />
           <Route path='profile' element={<Profile />} />
           <Route path='profile/editprofile' element={<ProfileEdit />} />
+          <Route path='wishlist' element={<Wishlist />} />
+          <Route path='chat' element={<Chat />} />
+
 
           <Route path='login' element={<Auth />}>
             <Route index element={<AuthMain />} />

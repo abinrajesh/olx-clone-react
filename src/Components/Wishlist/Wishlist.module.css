@@ -1,0 +1,56 @@
+.wishlistContainer {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    padding-top: 2rem;
+}
+
+.noItemsContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noItemsImg img {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.noItemsDescription {
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.noItemsDescription .mainDescription span{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.noItemsDescription .subDescription {
+    margin: auto;
+    margin-top: 1rem;
+    width: 10rem;
+    text-align: center;
+    color: #8d9094;
+    line-height: 2rem;
+}
+
+.discoverBtn button {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 3px solid #004896;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.discoverBtn button span {
+    color: #004896;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.discoverBtn button:hover {
+    background-color: #f3f3f3be;
+}
