@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './AccountDashboardModal.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import myAds from '../../../assets/myAds.svg'
 import { signOut } from 'firebase/auth';
 import { auth } from '../../../Firebase/Config';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../Firebase/Config";
+import { useAuth } from '../../../Context/AuthContext'
 
 const AccountDashboardModal = () => {
 
     const navigate = useNavigate();
+    const { user } = useAuth();
+    const [userData, setUserData] = useState(null);
+
 
     const handleProfileClick = () => {
         navigate('profile');
@@ -16,7 +22,7 @@ const AccountDashboardModal = () => {
     const handleLogout = async () => {
         const isConfirmed = window.confirm("Do you want to Logout?");
         if (!isConfirmed) return;
-        
+
         try {
             await signOut(auth);
             alert("Signed Out!");
@@ -24,6 +30,25 @@ const AccountDashboardModal = () => {
             console.error("Logout error: ", error.message);
         }
     }
+
+    useEffect(() => {
+
+        const getData = async () => {
+            if (user?.uid) {
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setUserData(docSnap.data());
+                } else {
+                    console.log("No user data found!");
+
+                }
+            }
+        };
+        getData();
+
+    }, [user]);
 
     return (
         <div className={styles.modalContainer}>
@@ -36,7 +61,7 @@ const AccountDashboardModal = () => {
                         <source srcSet="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="50px" alt="" />
                     </figure>
                     <div className={styles.userName}>
-                        <span>UserName</span>
+                        <span>{userData?.username || "Loading..."}</span>
                     </div>
                 </div>
                 <div className={styles.editProfileContainer}>
