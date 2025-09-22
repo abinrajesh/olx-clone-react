@@ -3,7 +3,9 @@ import OnBoardingCarousels from '../../Components/OnBoardingCarousels/OnBoarding
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './AuthMain.module.css'
 import { signInWithPopup } from 'firebase/auth'
-import { auth, provider } from "../../Firebase/Config";
+import { auth, provider, db } from "../../Firebase/Config";
+import { doc, setDoc } from "firebase/firestore";
+
 
 const AuthMain = () => {
     const navigate = useNavigate();
@@ -13,6 +15,15 @@ const AuthMain = () => {
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
+
+            await setDoc(doc(db, "users", user.uid), {
+                uid: user.uid,
+                username: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL,
+                createdAt: new Date(),
+            });
+
             console.log("Logged in user:", user);
             alert(`Signed in successfully as ${user.displayName}`);
             setTimeout(() => navigate('/'), 1000);

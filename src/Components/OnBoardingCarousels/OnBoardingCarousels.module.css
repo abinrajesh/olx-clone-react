@@ -20,7 +20,7 @@
     user-select: none;
 }
 
-.carouselImg picture img, source {
+.carouselImg img {
     width: 6rem;
 }
 

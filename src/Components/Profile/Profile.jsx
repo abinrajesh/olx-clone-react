@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Profile.module.css'
 import noPublicationsPoster from '../../assets/no-publications.png';
 import { useNavigate } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../Firebase/Config";
+import { useAuth } from '../../Context/AuthContext'
+
 
 const Profile = () => {
+
+
+    const { user } = useAuth();
+    const [userData, setUserData] = useState(null);
+    const memberSince = userData?.createdAt ? userData.createdAt.toDate().toLocaleString('default', { month: 'long', year: 'numeric' }) : "N/A";
+    const userLocation = userData?.location ? userData.location : "Location";
+
 
     const navigate = useNavigate();
 
@@ -15,6 +26,26 @@ const Profile = () => {
         navigate('/post');
     }
 
+
+    useEffect(() => {
+
+        const getData = async () => {
+            if (user?.uid) {
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setUserData(docSnap.data());
+                } else {
+                    console.log("No user data found!");
+
+                }
+            }
+        };
+        getData();
+
+    }, [user])
+
     return (
         <div className={styles.profileSection}>
 
@@ -22,18 +53,20 @@ const Profile = () => {
 
                 <div className={styles.userProfilePic}>
                     <figure>
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" />
-                        <source srcSet="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" />
+                        <img
+                            src={userData?.photoURL || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}
+                            alt="User profile"
+                        />
 
                     </figure>
                 </div>
                 <div className={styles.userName}>
-                    <span>User Name</span>
+                    <span>{userData?.username || "Loading..."}</span>
                 </div>
                 <div className={styles.userDescription}>
                     <div className={styles.memberTimePeriod}>
                         <span><svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="members" fillRule="evenodd"><path d="M341.579 85.3359V127.981H683.211V85.3359H768.619V127.981H895.963L938.667 170.669V895.981L895.963 938.669H128.038L85.3335 895.981V170.669L128.038 127.981H256.15V85.3359H341.579ZM853.259 426.648H170.742V853.315H853.259V426.648ZM320.221 511.988C355.601 511.988 384.277 540.66 384.277 575.988C384.277 611.337 355.601 639.988 320.221 639.988C284.84 639.988 256.165 611.337 256.165 575.988C256.165 540.66 284.84 511.988 320.221 511.988ZM256.15 213.315H170.742V341.336H853.259V213.315H768.619V255.981L725.915 298.648L683.211 255.981V213.315H341.579V255.981L298.875 298.648L256.15 255.981V213.315Z"></path></svg></span>
-                        <span>Member since `month Year`</span>
+                        <span>Member since {memberSince}</span>
                     </div>
                     <div className={styles.connections}>
                         <span><svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="followersIcon" class="" fill-rule="evenodd"><path class="" d="M938.667 643.55V818.968L877.149 880.485H628.364V802.91H845.033L861.091 786.851V654.449C838.517 581.722 770.463 531.394 693.857 531.394C641.513 531.394 592.33 554.531 558.914 594.91L499.142 545.436C547.336 487.196 618.318 453.819 693.857 453.819C806.827 453.819 906.9 529.727 937.251 638.43L938.667 643.55ZM512 786.851L495.942 802.91H178.967L162.909 786.851V769.727C185.232 698.764 257.784 647.758 337.455 647.758C417.125 647.758 489.678 698.764 512 769.727V786.851ZM337.455 570.182C221.867 570.182 116.441 647.351 86.7493 753.707L85.3335 758.808V818.968L146.851 880.485H528.058L589.576 818.968V758.808L588.16 753.707C558.468 647.351 453.043 570.182 337.455 570.182V570.182ZM337.455 337.455C369.532 337.455 395.637 363.54 395.637 395.637C395.637 427.714 369.532 453.819 337.455 453.819C305.377 453.819 279.273 427.714 279.273 395.637C279.273 363.54 305.377 337.455 337.455 337.455V337.455ZM337.455 531.394C412.296 531.394 473.212 470.478 473.212 395.637C473.212 320.776 412.296 259.879 337.455 259.879C262.613 259.879 201.697 320.776 201.697 395.637C201.697 470.478 262.613 531.394 337.455 531.394V531.394ZM686.546 221.091C718.623 221.091 744.727 247.196 744.727 279.273C744.727 311.351 718.623 337.455 686.546 337.455C654.468 337.455 628.364 311.351 628.364 279.273C628.364 247.196 654.468 221.091 686.546 221.091V221.091ZM686.546 415.031C761.387 415.031 822.303 354.114 822.303 279.273C822.303 204.413 761.387 143.516 686.546 143.516C611.704 143.516 550.788 204.413 550.788 279.273C550.788 354.114 611.704 415.031 686.546 415.031V415.031Z"></path></svg></span>
@@ -43,7 +76,7 @@ const Profile = () => {
                     </div>
                     <div className={styles.userLocation}>
                         <span><svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="infoFilled" class="" fill-rule="evenodd"><path class="rui-w4DG7" d="M512 938.664C276.736 938.664 85.3331 747.261 85.3331 511.997C85.3331 276.733 276.736 85.3307 512 85.3307C747.264 85.3307 938.667 276.733 938.667 511.997C938.667 747.261 747.264 938.664 512 938.664ZM512 853.331C700.202 853.331 853.333 700.2 853.333 511.997C853.333 323.795 700.202 170.664 512 170.664C323.797 170.664 170.666 323.795 170.666 511.997C170.666 700.2 323.797 853.331 512 853.331ZM512 383.997C488.448 383.997 469.333 364.883 469.333 341.331C469.333 317.779 488.448 298.664 512 298.664C535.552 298.664 554.667 317.779 554.667 341.331C554.667 364.883 535.552 383.997 512 383.997ZM512 725.331L469.333 682.664V469.331L512 426.664L554.667 469.331V682.664L512 725.331Z"></path></svg></span>
-                        <span>Location</span>
+                        <span>{userLocation}</span>
                     </div>
                     <div className={styles.verifictions}>
                         <div className={styles.userVerificationHeder}>

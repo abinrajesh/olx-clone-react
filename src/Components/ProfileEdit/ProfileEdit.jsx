@@ -1,24 +1,83 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './ProfileEdit.module.css';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../Firebase/Config";
+import { useAuth } from '../../Context/AuthContext';
 
 const ProfileEdit = () => {
 
     const navigate = useNavigate();
+    const { user } = useAuth();
+    const [userData, setUserData] = useState(null);
+    const [userName, setUserName] = useState("");
+    const [userLocation, setUserLocation] = useState("");
+    const [userPhoneNumber, setUserPhoneNumber] = useState("");
+
 
     const handleViewProfile = () => {
         navigate('/profile');
+    }
+
+    const handleNameChange = (e) => {
+        setUserName(e.target.value);
+        console.log(userName);
     }
 
     const handleDiscard = () => {
         navigate('/profile');
     }
 
-    const handleSave = (e) => {
+    const handleSave = async (e) => {
         e.preventDefault();
-        alert("Saved!");
+
+        if (!user?.uid) return;
+        if (!userName.trim()) return alert("Name cannot be empty");
+
+        try {
+            const userRef = doc(db, "users", user.uid);
+
+            await updateDoc(userRef, {
+                username: userName,
+                location: userLocation,
+                phone: userPhoneNumber
+            });
+            alert("Saved!");
+            navigate('/profile');
+        } catch (error) {
+            console.error("Error updating profile: ", error);
+            alert("Failed to update profile.");
+        }
     }
+
+    useEffect(() => {
+        if (userData) {
+            setUserName(userData.username || "");
+            setUserLocation(userData.location || "");
+            setUserPhoneNumber(userData.phone || "");
+        }
+    }, [userData]);
+
+    useEffect(() => {
+
+        const getData = async () => {
+            if (user?.uid) {
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setUserData(docSnap.data());
+                } else {
+                    console.log("No user data found!");
+
+                }
+
+            }
+        }
+        getData();
+
+    }, [user]);
 
     return (
         <div className={styles.profileEditSection}>
@@ -51,8 +110,9 @@ const ProfileEdit = () => {
 
                         <div className={styles.formSections}>
                             <div className={styles.formLeftSide}>
-                                <input className={styles.inputs} type="text" placeholder='Name' />
-                                <input className={classNames(styles.inputs, styles.locationInp)} type="text" placeholder='Location' />
+                                <input className={styles.inputs} type="text" placeholder='Name' value={userName} onChange={handleNameChange} />
+                                <input className={classNames(styles.inputs, styles.locationInp)} type="text" placeholder='Location' value={userLocation}
+                                    onChange={(e) => setUserLocation(e.target.value)} />
                             </div>
 
                             <div className={styles.formRightSide}>
@@ -81,7 +141,8 @@ const ProfileEdit = () => {
 
                             <div className={styles.formLeftSide}>
                                 <div className={styles.mobileNumberInput}>
-                                    <input className={styles.inputs} type="tel" placeholder='Phone number' />
+                                    <input className={styles.inputs} type="tel" placeholder='Phone number' value={userPhoneNumber}
+                                        onChange={(e) => setUserPhoneNumber(e.target.value)} />
                                     <div className={styles.countryCode}>
                                         <span>+91</span>
                                     </div>
@@ -89,7 +150,7 @@ const ProfileEdit = () => {
                                     <button className={styles.inputSubmitBtn}><span><svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-YQRFW _3yUQa" d="M277.333 85.333v60.331l366.336 366.336-366.336 366.336v60.331h60.331l409.003-408.981v-35.307l-409.003-409.045z"></path></svg></span></button>
                                 </div>
                                 <div className={styles.emailInput}>
-                                    <input className={styles.inputs} type="email" placeholder='Email address' />
+                                    <input className={styles.inputs} type="email" placeholder='Email address' value={userData?.email || "Loading..."} />
                                     <button className={styles.inputSubmitBtn}><span><svg width="16px" height="16px" viewBox="0 0 1024 1024" data-aut-id="icon" class="" fill-rule="evenodd"><path class="rui-YQRFW _3yUQa" d="M277.333 85.333v60.331l366.336 366.336-366.336 366.336v60.331h60.331l409.003-408.981v-35.307l-409.003-409.045z"></path></svg></span></button>
                                 </div>
                             </div>
@@ -115,7 +176,7 @@ const ProfileEdit = () => {
                                         <span>Link your Google account to seamlessly use your contact list.</span>
                                     </div>
                                 </div>
-                                <div className={(styles.formRightSide, styles.addintionalInfoBtn)}>
+                                <div className={classNames(styles.formRightSide, styles.addintionalInfoBtn)}>
                                     <button className={styles.linkBtn}>
                                         <span>Link</span>
                                     </button>

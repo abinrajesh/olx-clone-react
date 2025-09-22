@@ -4,8 +4,9 @@ import Return from '../Buttons/Return/Return'
 import styles from './EmailSignup.module.css'
 import olxLogo from '../../assets/olx_logo_2025.svg'
 import classNames from 'classnames'
-import { auth } from '../../Firebase/Config'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../Firebase/Config'
 
 const EmailSignup = () => {
 
@@ -66,10 +67,20 @@ const EmailSignup = () => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        username: userName,
+        email: user.email,
+        createdAt: new Date(),
+        // any other details you want
+      });
 
       await updateProfile(userCredential.user, {
         displayName: userName,
       });
+
 
       alert(`Account Created! Welcome ${userName}`);
       navigate('/');

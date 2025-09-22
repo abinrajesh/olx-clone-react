@@ -23,14 +23,26 @@ const App = () => {
         <Route path='/' element={<Home />}>
 
           <Route index element={<Ads />} />
-          <Route path='profile' element={<Profile />} />
-          <Route path='profile/editprofile' element={<ProfileEdit />} />
+          <Route path='profile' element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          } />
+          <Route path='profile/editprofile' element={
+            <PrivateRoute>
+              <ProfileEdit />
+            </PrivateRoute>
+          } />
           <Route path='wishlist' element={
             <PrivateRoute>
               <Wishlist />
             </PrivateRoute>
           } />
-          <Route path='chat' element={<Chat />} />
+          <Route path='chat' element={
+            <PrivateRoute>
+              <Chat />
+            </PrivateRoute>
+          } />
 
 
           <Route path='login' element={<Auth />}>
